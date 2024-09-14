@@ -317,6 +317,35 @@ footer {
     }
 }
 
+
+
+/* contact section */
+.col_form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Optional: adds spacing between elements */
+  }
+
+  .col_form input[type="text"],
+  .col_form input[type="email"],
+  .col_form textarea,
+  .col_form button {
+    border-radius: 5px; /* Adjust this value as needed */
+    padding: 10px; /* Optional: adds padding inside the elements */
+    border: 1px solid #ccc; /* Optional: adds a border to the elements */
+  }
+
+  .col_form button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Removes default button border */
+    cursor: pointer; /* Shows a pointer cursor on hover */
+  }
+
+  .col_form button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+
 /* Responsive Media Query code for max-width: 576px */
 @media screen and (max-width: 576px) {
     .section_title {
@@ -331,3 +360,4 @@ footer {
     nav .nav_logo h2 {
         font-size: 30px;
     }
+}
