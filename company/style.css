@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 #home {
-  background-image: url(bg5.jpg); /* Replace with the path to your image */
+  background-image: url(bg6.jpg); /* Replace with the path to your image */
   background-size: cover; /* Ensures the image covers the entire section */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -8,25 +8,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white; /* Adjust text color for better readability against the background image */
+  text-align: left;
+  color: white; 
+  
+}
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  padding-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+
+  /* Gradient Text */
+  background: linear-gradient(0deg, rgb(68, 67, 67), red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes the text itself transparent, revealing the gradient */
+  
+
+ 
 }
 
+
+h1:hover {
+  transition: color 0.3s ease-in-out;
+}
 
 
 #home a {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #fff; /* Adjust as needed */
-  color: #000; /* Adjust as needed */
+  background-color: #de2727; /* Adjust as needed */
+  color: #ffffff; /* Adjust as needed */
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  opacity: 0;
+  transform: translateY(100px); /* Start 100px below */
+  animation: slideInBottom 1.5s ease-out forwards;
 }
 
 #home a:hover {
-  background-color: #ddd; /* Adjust as needed */
+  background-color: #ddd;
+  color: #000; /* Adjust as needed */
 }
 
 * {
@@ -42,6 +70,7 @@ html {
 
 body {
   background: #f2f2f2;
+  
 }
 
 header {
@@ -54,7 +83,9 @@ header {
   justify-content: center;
   background: #f10f0f7f;
 }
-
+a{
+  cursor: pointer;
+}
 .navbar {
   display: flex;
   padding: 0 10px;
@@ -63,6 +94,9 @@ header {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  opacity: 0;
+  transform: translateY(-100px); /* Start 100px above */
+  animation: slideInTop 1s ease-out forwards;
 }
 
 .navbar .logo-container {
@@ -148,11 +182,11 @@ header a:hover, footer a:hover {
 
 
 .homepage {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   position: relative;
   background: url("images/home-bg.jpg");
-  background-position: center 65%;
+  /* background-position: center 65%; */
   background-size: cover;
   background-attachment: fixed;
 }
@@ -170,7 +204,7 @@ header a:hover, footer a:hover {
 .homepage .content {
   display: flex;
   height: 85%;
-  z-index: 3;
+  z-index: 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -184,11 +218,21 @@ header a:hover, footer a:hover {
 
 .homepage .content .text {
   margin-bottom: 50px;
-  color: #fff;
+  color: #ff0000;
   font-size: 20px;
   text-align: center;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  
+  opacity: 0;
+  transform: translateY(-100px); /* Start 100px above */
+  animation: slideInLeft 1s ease-out forwards;
 }
+.homepage .content .text p{
+  color: #703f3f;
+  opacity: 0;
+  transform: translateX(100px); /* Start 100px to the right */
+  animation: slideInRight 1s ease-out forwards;
+}
+
 
 .content a {
   color: #000;
@@ -456,7 +500,7 @@ section .cards .card {
 }
 
 .contact .row {
-  margin: 60px 0 90px;
+  margin: 60px  12vw;
   display: flex;
   max-width: 1200px;
   width: 100%;
@@ -484,11 +528,14 @@ section .cards .card {
   padding: 10px;
   width: 100%;
   font-size: 16px;
+  border-radius: 3px;
   outline: none;
   border: 1px solid #bfbfbf;
 }
 
 .contact form textarea {
+  border-radius: 3px;
+
   padding: 10px;
   width: 100%;
   font-size: 16px;
@@ -499,6 +546,8 @@ section .cards .card {
 }
 
 .contact form button {
+  width: 100%;
+
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 17px;
@@ -511,7 +560,7 @@ section .cards .card {
 }
 
 .contact form button:hover {
-  background: #525252;
+  background: #db6d6d;
 }
 
 footer {
@@ -597,6 +646,13 @@ footer a {
   .contact .row .col:last-child {
     margin-top: 40px;
   }
+  /* contact new */
+  .contact form input, 
+  .contact form button ,
+  .contact form textarea {
+      width: 80%; /* Further decrease width for phones */
+      margin: 2vh auto; /* Center align if needed */
+  }
 
   footer a {
     height: 0;
@@ -609,6 +665,7 @@ footer a {
     margin-bottom: 30px;
   }
 }
+/* contact new */
 
 
 
@@ -784,5 +841,50 @@ footer a {
   }
   .slider-scrollbar .scrollbar-thumb {
     width: 200%;
+  }
+}
+
+
+
+/* animations */
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
