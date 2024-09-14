@@ -594,8 +594,13 @@ footer a {
     width: 300px;
     display: block;
     height: 100vh;
-    top: 75px;
-    background: #333;
+    top: 17.2vh;
+    
+    z-index: 3;
+   
+    background: #f10f0f7f;
+
+
     transition: left 0.3s ease;
   }
 
@@ -682,9 +687,9 @@ footer a {
 .slider-wrapper {
   position: relative;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #b88f8f;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: #fc9898;
 }
 
 .slider-wrapper .slide-button {
@@ -692,8 +697,8 @@ footer a {
   top: 50%;
   outline: none;
   border: none;
-  height: 50px;
-  width: 50px;
+  height: 3vmax;
+  width: 3vmax;
   z-index: 5;
   color: #f30000;
   display: flex;
@@ -827,11 +832,33 @@ footer a {
 
 /* Styles for mobile and tablets */
 @media only screen and (max-width: 1023px) {
+  
+.container {
+  max-width: 1200px;
+  width: 80%;
+  margin: auto;
+}
   .slider-wrapper .slide-button {
-    display: none !important;
+    /* display: none !important; */
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 5vmax;
+    width: 5vmax;
+    z-index: 5;
+    color: #f30000;
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
   }
   .slider-wrapper .image-list {
-    gap: 10px;
+    gap: 4vw;
     margin-bottom: 15px;
     scroll-snap-type: x mandatory;
   }
