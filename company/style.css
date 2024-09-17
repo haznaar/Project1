@@ -89,13 +89,13 @@ a{
 .navbar {
   display: flex;
   padding: 0 10px;
-  max-width: 2800px;
+  /* max-width: 2800px; */
   width: 100%;
   align-items: center;
   justify-content: space-between;
   position: relative;
   opacity: 0;
-  transform: translate(-100px); /* Start 100px above */
+  transform: translate(-100px);
   animation: slideInTop 1s ease-out forwards;
 }
 
@@ -148,6 +148,19 @@ header a:hover, footer a:hover {
 
 /* Show the hamburger menu button and hide links on small screens */
 @media only screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    padding: 0 10px;
+    /* max-width: 2800px; */
+    width: 100;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    opacity: 0;
+    transform: translate(-100px); /* Start 100px above */
+    animation: slideInTop 1s ease-out forwards;
+  }
+  
   .navbar .logo-container {
     margin-right: auto;
   }
@@ -509,6 +522,7 @@ section .cards .card {
 
 .contact .row {
   margin: 60px  12vw;
+  
   display: flex;
   max-width: 1200px;
   width: 100%;
@@ -518,7 +532,7 @@ section .cards .card {
 
 .contact .row .col {
   padding: 0 10px;
-  width: calc(100% / 2 - 50px);
+  /* width: calc(100% / 2 - 50px); */
 }
 
 .contact .col p {
@@ -532,7 +546,7 @@ section .cards .card {
 
 .contact form input {
   height: 45px;
-  margin-bottom: 20px;
+  margin: 2vh 0;
   padding: 10px;
   width: 100%;
   font-size: 16px;
@@ -650,6 +664,8 @@ footer a {
 
   .contact .row {
     flex-direction: column;
+    width: 90%;
+
   }
 
   .contact .row .col {
@@ -663,8 +679,8 @@ footer a {
   .contact form input, 
   .contact form button ,
   .contact form textarea {
-      width: 80%; /* Further decrease width for phones */
-      margin: 2vh auto; /* Center align if needed */
+    width: 90%;
+      margin: 2vh 2vw; /* Center align if needed */
   }
 
   footer a {
@@ -814,7 +830,7 @@ footer a {
 
 .slider-scrollbar .scrollbar-thumb {
   position: absolute;
-  background: #000;
+  background: #ff0000;
   top: 0;
   bottom: 0;
   width: 50%;
@@ -875,7 +891,7 @@ footer a {
     height: 380px;
   }
   .slider-scrollbar .scrollbar-thumb {
-    width: 200%;
+    width: 10%;
   }
 }
 
